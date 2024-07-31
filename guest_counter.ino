@@ -4,7 +4,7 @@
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 int PIR = 2;
-int slot = 1;
+int count = 1;
 
 void setup() {
   lcd.init();
@@ -15,18 +15,18 @@ void setup() {
 
 void loop() {
   if (digitalRead(PIR) == HIGH) {
-    if (slot > 0) {
-      slot++;
+    if (count > 0) {
+      count++;
       lcd.setCursor(0, 0);
       lcd.print("  WELCOME  ");
       lcd.setCursor(0, 1);
-      lcd.print(" Guest: ");
-      lcd.print(slot);
+      lcd.print("  Guest: ");
+      lcd.print(count);
       Serial.print("Detected: ");
-      Serial.println(slot);
+      Serial.println(count);
     }
     else if(digitalRead(PIR)==LOW){
-      lcd.print(slot);
+      lcd.print(count);
     }
     delay(5000);
   }
