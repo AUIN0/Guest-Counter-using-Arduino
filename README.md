@@ -1,6 +1,6 @@
 # Guest-Counter-using-Arduino
 
-This project is made for an event to count the visitors (guests) using Arduino Uno.
+This project is made for an event to count the visitors (guests) using PIR motion sensor and displayed in an LCD I2C.
 
 Components are:
 1. Arduino Uno
